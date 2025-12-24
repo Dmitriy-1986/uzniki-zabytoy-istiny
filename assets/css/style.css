@@ -223,7 +223,7 @@ footer {
 
 @media (max-width: 480px) {
     nav {
-        padding: 20px;
+        padding: 60px 20px;
     }
 
     main section {
@@ -246,6 +246,7 @@ footer {
     .hero {
       background: url('../img/mobile-bg-img.png') center/cover no-repeat;
     }
+
     .hero-text p {
         font-size: 0.8rem;
     }
