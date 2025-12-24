@@ -24,6 +24,17 @@ body {
   inset: 0;
   background: rgba(0, 0, 0, 0.288);
 }
+.uzi {
+    font-size: 3rem;
+    color: #000; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow:
+       2px 2px 0 #c40000,
+      -2px 2px 0 #c40000,
+       2px -2px 0 #c40000,
+      -2px -2px 0 #c40000;
+}
 
 nav {
     margin: 0 auto;
@@ -32,7 +43,7 @@ nav {
     z-index: 3;
     display: flex;                
     align-items: center;           
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 50px;
 }
 
@@ -169,6 +180,9 @@ footer {
 
 /* ================= ADAPTIVE ================= */
 @media (max-width: 1024px) {
+    .uzi {
+      display: none;
+    }
     nav {
         padding: 30px;
         justify-content: center;
