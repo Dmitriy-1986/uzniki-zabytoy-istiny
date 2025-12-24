@@ -11,7 +11,7 @@ body {
     color: #eaeaea;
 }
 
-/* ================= HERO ================= */
+/* ================= HEADER ================= */
 .hero {
   min-height: 100vh;
   background: url('../img/hero-city--uzi.png') center/cover no-repeat;
