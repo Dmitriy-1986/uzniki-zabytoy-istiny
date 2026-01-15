@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музика U.Z.I. – Слухати онлайн</title>
+    <meta name="description"
+        content="Офіційний плейлист реп гурту U.Z.I. Слухайте треки в нашому інтерактивному плеєрі.">
+
+    <link rel="canonical" href="https://uzniki-zabytoy-istiny.pp.ua/music.html">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/mobile-menu.css">
+    <link rel="stylesheet" href="./assets/css/music-section.css">
+
+    <meta property="og:title" content="Музика U.Z.I.">
+    <meta property="og:description" content="Слухай наш плейлист онлайн!">
+    <meta property="og:image"
+        content="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/android-chrome-512x512.png">
+    <meta property="og:url" content="https://uzniki-zabytoy-istiny.pp.ua/music.html">
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        .content h2 {
+            font-size: 2.2rem;
+        }
+
+        .content h3 {
+            font-size: 1.5rem;
+        }
+
+        .content h2,
+        h3 {
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Хлебные крошки */
+        .breadcrumb-nav {
+            padding: 15px 80px;
+            background-color: transparent;
+        }
+
+        @media screen and (max-width: 700px) {
+            .breadcrumb-nav {
+                padding: 15px 40px;
+            }
+        }
+
+        @media screen and (max-width: 450px) {
+            .breadcrumb-nav {
+                padding: 15px 20px;
+            }
+        }
+
+        .breadcrumbs {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .breadcrumb-item {
+            display: flex;
+            align-items: center;
+            color: #7e7d7d;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            content: "/";
+            margin: 0 10px;
+            color: #555;
+        }
+
+        .breadcrumb-item a {
+            color: #7e7d7d;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .breadcrumb-item a:hover {
+            color: #575757;
+        }
+
+        .breadcrumb-item.active {
+            color: #070707;
+            pointer-events: none;
+        }
+    </style>
+
+    <link rel="canonical" href="https://uzniki-zabytoy-istiny.pp.ua/music.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <!-- Mobile Menu -->
+            <div id="burgerBtn" class="burger-btn">
+                <img id="burgerIcon" class="icon-burger-menu" src="./assets/img/icon-burger-menu.png" alt="Menu">
+            </div>
+
+            <div class="nav-menu">
+                <div class="content-nav-menu">
+                    <h2>U.Z.I.</h2>
+                    <ul>
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="about-us.html">Про Нас</a></li>
+                        <li><a href="music.html">Музика</a></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //Mobile Menu -->
+
+            <!-- Hero block -->
+            <section class="hero-pages">
+
+                <!-- Nav -->
+                <nav class="navbar">
+                    <div class="logo">U.Z.I.</div>
+                    <ul class="nav-links">
+                        <li><a href="index.html">Головна</a></li>
+                        <li><a href="about-us.html">Про Нас</a></li>
+                        <li><a href="music.html" class="nav-active">Музика</a></li>
+                        <li><a href="contacts.html">Контакти</a></li>
+                    </ul>
+                </nav>
+                <!-- //Nav -->
+
+                <div class="hero-bg-pages"></div>
+                <div class="logo-mobile-page">U.Z.I.</div>
+                <div class="hero-overlay"></div>
+
+            </section>
+            <!-- //Hero block -->
+        </header>
+        <!-- Breadcrumb -->
+        <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+            <ul class="breadcrumbs">
+                <li class="breadcrumb-item"><a href="index.html">Головна</a></li>
+                <li class="breadcrumb-item"><a href="music.html">Музика</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Плейлист</li>
+            </ul>
+        </nav>
+        <!-- //Breadcrumb -->
+        <main class="content">
+
+            <section>
+                <h2>Музика</h2>
+                <h3>Узники Забытой Истины</h3>
+                <div id="root"></div>
+            </section>
+        </main>
+
+
+        <footer>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="./index.html">Головна</a></li>
+                    <li><a href="./about-us.html">Про нас</a></li>
+                    <li><a href="./music.html">Музика</a></li>
+                    <li><a href="./contacts.html">Контакти</a></li>
+                </ul>
+            </nav>
+            <p> &copy; <span id="year"></span> U.Z.I.</p>
+        </footer>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/mobile-menu.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Помощник для работы с CSS-переменными
+        const setProperty = (target, prop, value) => {
+            if (target) target.style.setProperty(prop, value);
+        };
+
+        // Компонент экрана загрузки
+        const Loading = ({ progress }) => (
+            <div className="loading center flex-column">
+                <div className="loading__text">Завантаження</div>
+                <div className="loading__percent"><span>{progress}</span>%</div>
+            </div>
+        );
+
+        // ОСНОВНОЙ КОМПОНЕНТ ПЛЕЕРА
+        const App = ({ songs }) => {
+            const [index, setIndex] = useState(0);
+            const [isPlayed, setIsPlayed] = useState(false);
+
+            // Обновляем визуальные элементы при смене песни
+            useEffect(() => {
+                const sliderImgs = document.querySelector(".slider__imgs");
+                setProperty(sliderImgs, "--index", -index);
+            }, [index]);
+
+            // Функция воспроизведения / паузы
+            const playPause = () => {
+                const audio = document.querySelectorAll("audio")[index];
+                if (audio.paused) {
+                    audio.play();
+                    setIsPlayed(true);
+                } else {
+                    audio.pause();
+                    setIsPlayed(false);
+                }
+            };
+
+            // Функция переключения песни
+            const changeSong = (newIndex) => {
+                const audios = document.querySelectorAll("audio");
+                audios[index].pause();
+                audios[index].currentTime = 0;
+
+                setIndex(newIndex);
+
+                // Ждем обновления DOM и запускаем
+                setTimeout(() => {
+                    const nextAudio = document.querySelectorAll("audio")[newIndex];
+                    if (isPlayed) nextAudio.play();
+                }, 50);
+            };
+
+            // Функция перемотки при клике на прогресс-бар
+            const handleScrub = (e) => {
+                const audio = document.querySelectorAll("audio")[index];
+                const progressWrapper = document.querySelector(".progress__wrapper");
+
+                if (!audio || !progressWrapper) return;
+
+                const rect = progressWrapper.getBoundingClientRect();
+                const x = e.clientX - rect.left; // Позиция клика относительно бара
+                const width = rect.width;
+                const fraction = x / width;
+
+                if (audio.duration) {
+                    audio.currentTime = fraction * audio.duration;
+                }
+            };
+
+            return (
+                <div className="music-player flex-column">
+                    <div className="slider center">
+                        <div className="slider__content center">
+                            <button
+                                className={`music-player__broadcast-guarantor center button ${isPlayed ? 'click' : ''}`}
+                                onClick={playPause}
+                            >
+                                <i className="icon-play" />
+                                <i className="icon-pause" />
+                            </button>
+                            <div className="slider__imgs flex-row">
+                                {songs.map((s, i) => (
+                                    <img key={i} src={s.files.cover} className="img" alt="cover" />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="slider__controls center">
+                            <button className="slider__switch-button button" onClick={() => changeSong(index > 0 ? index - 1 : songs.length - 1)}>
+                                <i className="icon-back" />
+                            </button>
+
+                            <div className="music-player__info">
+                                <div className="music-player__singer-name">{songs[index].artist}</div>
+                                <div className="music-player__subtitle">{songs[index].songName}</div>
+                            </div>
+
+                            <button className="slider__switch-button button" onClick={() => changeSong(index < songs.length - 1 ? index + 1 : 0)}>
+                                <i className="icon-next" />
+                            </button>
+
+                            {/* Полоса прогресса с поддержкой клика */}
+                            <div className="progress center" onClick={handleScrub}>
+                                <div className="progress__wrapper">
+                                    <div className="progress__bar center" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul className="music-player__playlist list">
+                        {songs.map((song, i) => (
+                            <li key={i} className={`music-player__song ${i === index ? 'active' : ''}`} onClick={() => changeSong(i)}>
+                                <div className="flex-row _align_center">
+                                    <img src={song.files.cover} className="img music-player__song-img" />
+                                    <div className="music-player__playlist-info">
+                                        <b>{song.songName}</b>
+                                        <div className="flex-row _justify_space-btwn">
+                                            <span className="music-player__subtitle">{song.artist}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <audio
+                                    src={song.files.song}
+                                    onTimeUpdate={(e) => {
+                                        if (i !== index) return;
+                                        const progress = (e.target.currentTime / e.target.duration) * 100;
+                                        setProperty(document.querySelector(".progress__bar"), "--width", `${progress}%`);
+                                    }}
+                                    onEnded={() => {
+                                        if (index < songs.length - 1) changeSong(index + 1);
+                                        else setIsPlayed(false);
+                                    }}
+                                />
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        };
+
+        // ИНИЦИАЛИЗАЦИЯ
+        async function init() {
+            const root = document.getElementById("root");
+            const yearSpan = document.getElementById('year');
+            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+
+            try {
+                // Загрузка локального JSON
+                const response = await fetch("./assets/js/music-info.json");
+                if (!response.ok) throw new Error("Файл не знайдено");
+
+                const data = await response.json();
+                const songs = data.songs;
+
+                let loadedFiles = 0;
+                const totalFiles = songs.length * 2; // Обложка + Аудио
+
+                // Функция для реальной предзагрузки файлов (чтобы работал процент)
+                const preloadFile = (url) => new Promise((resolve) => {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', url);
+                    xhr.responseType = 'blob';
+                    xhr.onload = () => {
+                        loadedFiles++;
+                        const percent = Math.round((loadedFiles / totalFiles) * 100);
+                        ReactDOM.render(<Loading progress={percent} />, root);
+                        resolve(URL.createObjectURL(xhr.response));
+                    };
+                    xhr.onerror = () => resolve(url); // Если ошибка, используем прямую ссылку
+                    xhr.send();
+                });
+
+                // Запускаем процесс загрузки
+                for (let song of songs) {
+                    song.files.cover = await preloadFile(song.files.cover);
+                    song.files.song = await preloadFile(song.files.song);
+                }
+
+                // Когда всё готово, показываем плеер
+                ReactDOM.render(<App songs={songs} />, root);
+
+            } catch (error) {
+                console.error("Помилка:", error);
+                root.innerHTML = `<div style="color:white; text-align:center;">Помилка завантаження: ${error.message}</div>`;
+            }
+        }
+
+        init();
+    </script>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+{
+    "songs": [
+        {
+            "bg": "#c9bea28f",
+            "artist": "U.Z.I.",
+            "songName": "1. Интро",
+            "files": {
+                "song": "./assets/music/first-album/1.Интро (2009).mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#0896eba1",
+            "artist": "U.Z.I.",
+            "songName": "2. Небо (скит)",
+            "files": {
+                "song": "./assets/music/first-album/2.Небо (скит).mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#ebbe03",
+            "artist": "U.Z.I.",
+            "songName": "3. Небо",
+            "files": {
+                "song": "./assets/music/first-album/3.Небо.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#ffc382",
+            "artist": "U.Z.I.",
+            "songName": "4. Александрия",
+            "files": {
+                "song": "./assets/music/first-album/4.Александрия.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#ffcbdc",
+            "artist": "U.Z.I.",
+            "songName": "5. Без тебя",
+            "files": {
+                "song": "./assets/music/first-album/5.Без тебя.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#44c16fb5",
+            "artist": "U.Z.I.",
+            "songName": "6. Вижу тебя",
+            "files": {
+                "song": "./assets/music/first-album/6.Вижу тебя.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#ff4545",
+            "artist": "U.Z.I.",
+            "songName": "7. Всему свое время",
+            "files": {
+                "song": "./assets/music/first-album/7.Всему свое время.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "8. Творчество",
+            "files": {
+                "song": "./assets/music/first-album/8.Творчество.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "9. Депрессия (дождь)",
+            "files": {
+                "song": "./assets/music/first-album/9.Депрессия (дождь).mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "10. Депрессия (дождь) (RMX)",
+            "files": {
+                "song": "./assets/music/first-album/10.Депрессия (дождь) (RMX).mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "11. Душа",
+            "files": {
+                "song": "./assets/music/first-album/11.Душа.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "12. Единственный друг",
+            "files": {
+                "song": "./assets/music/first-album/12.Единственный друг.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "13. Жестяк (не законченая версия)",
+            "files": {
+                "song": "./assets/music/first-album/13.Жестяк (не законченая версия).mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "14. Стихотворение",
+            "files": {
+                "song": "./assets/music/first-album/14.Стихотворение 1[1].mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "15. Жизнь бандита (RMX)",
+            "files": {
+                "song": "./assets/music/first-album/15.Жизнь бандита (RMX).mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "16. Моё оружие",
+            "files": {
+                "song": "./assets/music/first-album/16.Моё оружие.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "17. Стихотворение",
+            "files": {
+                "song": "./assets/music/first-album/17.Стихотворение 2.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "18. Одиночество",
+            "files": {
+                "song": "./assets/music/first-album/18.Одиночество.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "19. Посмотри на себя",
+            "files": {
+                "song": "./assets/music/first-album/19.Посмотри на себя.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "20. Умереть однажды",
+            "files": {
+                "song": "./assets/music/first-album/20.Умереть однажды.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "21. Я устал",
+            "files": {
+                "song": "./assets/music/first-album/21.Я устал.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "22. Узники забытой истины",
+            "files": {
+                "song": "./assets/music/first-album/22.Узники забытой истины.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        },
+        {
+            "bg": "#e5e7e9",
+            "artist": "U.Z.I.",
+            "songName": "23. Аутро",
+            "files": {
+                "song": "./assets/music/first-album/23.Аутро.mp3",
+                "cover": "./assets/img/uzi-logo.jpg"
+            }
+        }
+    ]
+}

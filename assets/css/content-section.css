@@ -1,0 +1,53 @@
+.content section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+/* Заголовки */
+.content section h2 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 24px;
+    color: #000000;
+    position: relative;
+}
+
+.content section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #c40000;
+    margin-top: 12px;
+}
+
+/* Текст */
+.content section p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #7e7d7d;
+}
+
+/* ================= BUTTONS ================= */
+.btn {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 14px 36px;
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-outline {
+    color: #c40000;
+    border: 1px solid #c40000;
+}
+
+.btn-outline:hover {
+    background: #c40000;
+    color: #000;
+}
