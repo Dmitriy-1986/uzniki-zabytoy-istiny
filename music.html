@@ -30,6 +30,10 @@
             font-size: 1.5rem;
         }
 
+        .content h4 {
+            margin: 0;
+        }
+
         .content h2,
         h3 {
             margin-bottom: 30px;
@@ -91,6 +95,12 @@
         .breadcrumb-item.active {
             color: #070707;
             pointer-events: none;
+        }
+        .content section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 
@@ -159,7 +169,39 @@
             <section>
                 <h2>Музика</h2>
                 <h3>Узники Забытой Истины</h3>
-                <div id="root"></div>
+
+                <div class="player-card">
+                    <div class="play-wrapper">
+                        <button class="btn btn-main" id="playPauseBtn" onclick="togglePlay()">▶</button>
+                    </div>
+
+                    <div class="side-controls">
+                        <button class="btn btn-side" onclick="prevTrack()">⏮</button>
+                        <h4 id="current-title">Название трека</h4>
+                        <button class="btn btn-side" onclick="nextTrack()">⏭</button>
+                    </div>
+
+                    <audio id="mainPlayer">
+                        <source id="audioSource" src="" type="audio/mpeg">
+                    </audio>
+
+                    <div class="progress-container">
+                        <input type="range" id="seekSlider" class="progress-slider" value="0" min="0" step="1">
+                        <div class="time-info">
+                            <span id="currentTime">0:00</span>
+                            <span id="durationTime">0:00</span>
+                        </div>
+                    </div>
+
+                    <div class="volume-container">
+                        <span>🔈</span>
+                        <input type="range" class="volume-slider" id="volumeRange" min="0" max="1" step="0.01"
+                            value="0.7">
+                        <span>🔊</span>
+                    </div>
+
+                    <ul class="playlist" id="playlist"></ul>
+                </div>
             </section>
         </main>
 
@@ -180,200 +222,98 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/mobile-menu.js"></script>
 
-    <script type="text/babel">
-        const { useState, useEffect } = React;
+    <script>
+        const player = document.getElementById('mainPlayer');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const seekSlider = document.getElementById('seekSlider');
+        const currentTimeText = document.getElementById('currentTime');
+        const durationTimeText = document.getElementById('durationTime');
+        const source = document.getElementById('audioSource');
+        const titleDisplay = document.getElementById('current-title');
+        const playlistElement = document.getElementById('playlist');
+        const volumeRange = document.getElementById('volumeRange');
 
-        // Помощник для работы с CSS-переменными
-        const setProperty = (target, prop, value) => {
-            if (target) target.style.setProperty(prop, value);
-        };
+        const songs = [
+            { src: "./assets/music/first-album/1.Интро (2009).mp3", title: "1. Интро" },
+            { src: "./assets/music/first-album/2.Небо (скит).mp3", title: "2. Небо (скит)" },
+            { src: "./assets/music/first-album/3.Небо.mp3", title: "3. Небо" },
+            { src: "./assets/music/first-album/4.Александрия.mp3", title: "4. Александрия" },
+            { src: "./assets/music/first-album/5.Без тебя.mp3", title: "5. Без тебя" },
+            { src: "./assets/music/first-album/6.Вижу тебя.mp3", title: "6. Вижу тебя" },
+            { src: "./assets/music/first-album/7.Всему свое время.mp3", title: "7. Всему свое время" },
+            { src: "./assets/music/first-album/8.Творчество.mp3", title: "8. Творчество" },
+            { src: "./assets/music/first-album/9.Депрессия (дождь).mp3", title: "9. Депрессия (дождь)" },
+            { src: "./assets/music/first-album/10.Депрессия (дождь) (RMX).mp3", title: "10. Депрессия (дождь) (RMX)" },
+            { src: "./assets/music/first-album/11.Душа.mp3", title: "11. Душа" },
+            { src: "./assets/music/first-album/12.Единственный друг.mp3", title: "12. Единственный друг" },
+            { src: "./assets/music/first-album/13.Жестяк (не законченая версия).mp3", title: "13. Жестяк (не законченая версия)" },
+            { src: "./assets/music/first-album/14.Стихотворение 1[1].mp3", title: "14. Стихотворение" },
+            { src: "./assets/music/first-album/15.Жизнь бандита (RMX).mp3", title: "15. Жизнь бандита (RMX)" },
+            { src: "./assets/music/first-album/16.Моё оружие.mp3", title: "16. Моё оружие" },
+            { src: "./assets/music/first-album/17.Стихотворение 2.mp3", title: "17. Стихотворение" },
+            { src: "./assets/music/first-album/18.Одиночество.mp3", title: "18. Одиночество" },
+            { src: "./assets/music/first-album/19.Посмотри на себя.mp3", title: "19. Посмотри на себя" },
+            { src: "./assets/music/first-album/20.Умереть однажды.mp3", title: "20. Умереть однажды" },
+            { src: "./assets/music/first-album/21.Я устал.mp3", title: "21. Я устал" },
+            { src: "./assets/music/first-album/22.Узники забытой истины.mp3", title: "22. Узники забытой истины" },
+            { src: "./assets/music/first-album/23.Аутро.mp3", title: "23. Аутро" }
+        ];
+        let currentIndex = 0;
 
-        // Компонент экрана загрузки
-        const Loading = ({ progress }) => (
-            <div className="loading center flex-column">
-                <div className="loading__text">Завантаження</div>
-                <div className="loading__percent"><span>{progress}</span>%</div>
-            </div>
-        );
-
-        // ОСНОВНОЙ КОМПОНЕНТ ПЛЕЕРА
-        const App = ({ songs }) => {
-            const [index, setIndex] = useState(0);
-            const [isPlayed, setIsPlayed] = useState(false);
-
-            // Обновляем визуальные элементы при смене песни
-            useEffect(() => {
-                const sliderImgs = document.querySelector(".slider__imgs");
-                setProperty(sliderImgs, "--index", -index);
-            }, [index]);
-
-            // Функция воспроизведения / паузы
-            const playPause = () => {
-                const audio = document.querySelectorAll("audio")[index];
-                if (audio.paused) {
-                    audio.play();
-                    setIsPlayed(true);
-                } else {
-                    audio.pause();
-                    setIsPlayed(false);
-                }
-            };
-
-            // Функция переключения песни
-            const changeSong = (newIndex) => {
-                const audios = document.querySelectorAll("audio");
-                audios[index].pause();
-                audios[index].currentTime = 0;
-
-                setIndex(newIndex);
-
-                // Ждем обновления DOM и запускаем
-                setTimeout(() => {
-                    const nextAudio = document.querySelectorAll("audio")[newIndex];
-                    if (isPlayed) nextAudio.play();
-                }, 50);
-            };
-
-            // Функция перемотки при клике на прогресс-бар
-            const handleScrub = (e) => {
-                const audio = document.querySelectorAll("audio")[index];
-                const progressWrapper = document.querySelector(".progress__wrapper");
-
-                if (!audio || !progressWrapper) return;
-
-                const rect = progressWrapper.getBoundingClientRect();
-                const x = e.clientX - rect.left; // Позиция клика относительно бара
-                const width = rect.width;
-                const fraction = x / width;
-
-                if (audio.duration) {
-                    audio.currentTime = fraction * audio.duration;
-                }
-            };
-
-            return (
-                <div className="music-player flex-column">
-                    <div className="slider center">
-                        <div className="slider__content center">
-                            <button
-                                className={`music-player__broadcast-guarantor center button ${isPlayed ? 'click' : ''}`}
-                                onClick={playPause}
-                            >
-                                <i className="icon-play" />
-                                <i className="icon-pause" />
-                            </button>
-                            <div className="slider__imgs flex-row">
-                                {songs.map((s, i) => (
-                                    <img key={i} src={s.files.cover} className="img" alt="cover" />
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="slider__controls center">
-                            <button className="slider__switch-button button" onClick={() => changeSong(index > 0 ? index - 1 : songs.length - 1)}>
-                                <i className="icon-back" />
-                            </button>
-
-                            <div className="music-player__info">
-                                <div className="music-player__singer-name">{songs[index].artist}</div>
-                                <div className="music-player__subtitle">{songs[index].songName}</div>
-                            </div>
-
-                            <button className="slider__switch-button button" onClick={() => changeSong(index < songs.length - 1 ? index + 1 : 0)}>
-                                <i className="icon-next" />
-                            </button>
-
-                            {/* Полоса прогресса с поддержкой клика */}
-                            <div className="progress center" onClick={handleScrub}>
-                                <div className="progress__wrapper">
-                                    <div className="progress__bar center" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <ul className="music-player__playlist list">
-                        {songs.map((song, i) => (
-                            <li key={i} className={`music-player__song ${i === index ? 'active' : ''}`} onClick={() => changeSong(i)}>
-                                <div className="flex-row _align_center">
-                                    <img src={song.files.cover} className="img music-player__song-img" />
-                                    <div className="music-player__playlist-info">
-                                        <b>{song.songName}</b>
-                                        <div className="flex-row _justify_space-btwn">
-                                            <span className="music-player__subtitle">{song.artist}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <audio
-                                    src={song.files.song}
-                                    onTimeUpdate={(e) => {
-                                        if (i !== index) return;
-                                        const progress = (e.target.currentTime / e.target.duration) * 100;
-                                        setProperty(document.querySelector(".progress__bar"), "--width", `${progress}%`);
-                                    }}
-                                    onEnded={() => {
-                                        if (index < songs.length - 1) changeSong(index + 1);
-                                        else setIsPlayed(false);
-                                    }}
-                                />
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            );
-        };
-
-        // ИНИЦИАЛИЗАЦИЯ
-        async function init() {
-            const root = document.getElementById("root");
-            const yearSpan = document.getElementById('year');
-            if (yearSpan) yearSpan.textContent = new Date().getFullYear();
-
-            try {
-                // Загрузка локального JSON
-                const response = await fetch("./assets/js/music-info.json");
-                if (!response.ok) throw new Error("Файл не знайдено");
-
-                const data = await response.json();
-                const songs = data.songs;
-
-                let loadedFiles = 0;
-                const totalFiles = songs.length * 2; // Обложка + Аудио
-
-                // Функция для реальной предзагрузки файлов (чтобы работал процент)
-                const preloadFile = (url) => new Promise((resolve) => {
-                    const xhr = new XMLHttpRequest();
-                    xhr.open('GET', url);
-                    xhr.responseType = 'blob';
-                    xhr.onload = () => {
-                        loadedFiles++;
-                        const percent = Math.round((loadedFiles / totalFiles) * 100);
-                        ReactDOM.render(<Loading progress={percent} />, root);
-                        resolve(URL.createObjectURL(xhr.response));
-                    };
-                    xhr.onerror = () => resolve(url); // Если ошибка, используем прямую ссылку
-                    xhr.send();
-                });
-
-                // Запускаем процесс загрузки
-                for (let song of songs) {
-                    song.files.cover = await preloadFile(song.files.cover);
-                    song.files.song = await preloadFile(song.files.song);
-                }
-
-                // Когда всё готово, показываем плеер
-                ReactDOM.render(<App songs={songs} />, root);
-
-            } catch (error) {
-                console.error("Помилка:", error);
-                root.innerHTML = `<div style="color:white; text-align:center;">Помилка завантаження: ${error.message}</div>`;
-            }
+        function togglePlay() {
+            if (player.paused) player.play(); else player.pause();
         }
 
-        init();
+        player.onplay = () => { playPauseBtn.innerText = "⏸"; };
+        player.onpause = () => { playPauseBtn.innerText = "▶"; };
+
+        player.ontimeupdate = () => {
+            if (!isNaN(player.duration)) {
+                seekSlider.max = Math.floor(player.duration);
+                seekSlider.value = Math.floor(player.currentTime);
+                currentTimeText.innerText = formatTime(player.currentTime);
+                durationTimeText.innerText = formatTime(player.duration);
+            }
+        };
+
+        seekSlider.oninput = () => { player.currentTime = seekSlider.value; };
+
+        function formatTime(seconds) {
+            let min = Math.floor(seconds / 60);
+            let sec = Math.floor(seconds % 60);
+            return min + ":" + (sec < 10 ? "0" + sec : sec);
+        }
+
+        function loadTrack(index) {
+            currentIndex = index;
+            source.src = songs[currentIndex].src;
+            titleDisplay.innerText = songs[currentIndex].title;
+            renderPlaylist();
+            player.load();
+            player.play();
+        }
+
+        function renderPlaylist() {
+            playlistElement.innerHTML = "";
+            songs.forEach((song, index) => {
+                const li = document.createElement('li');
+                li.innerText = song.title;
+                if (index === currentIndex) li.classList.add('active');
+                li.onclick = () => loadTrack(index);
+                playlistElement.appendChild(li);
+            });
+        }
+
+        function nextTrack() { currentIndex = (currentIndex + 1) % songs.length; loadTrack(currentIndex); }
+        function prevTrack() { currentIndex = (currentIndex - 1 + songs.length) % songs.length; loadTrack(currentIndex); }
+
+        player.onended = () => nextTrack();
+        volumeRange.oninput = (e) => { player.volume = e.target.value; };
+
+        source.src = songs[0].src;
+        titleDisplay.innerText = songs[0].title;
+        renderPlaylist();
     </script>
-    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 </body>
 
 </html>
