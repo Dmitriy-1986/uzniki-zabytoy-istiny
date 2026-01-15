@@ -21,43 +21,29 @@
     overflow: hidden;
 }
 
-/* .btn-main {
-    font-size: 80px !important;
-    line-height: 1 !important;
-    color: #ffffff !important;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 40px;  
-    min-height: 40px; 
-    cursor: pointer;
-}
-
-.btn-main img {
-    display: block;
-    max-width: 100%; 
-    height: auto;
-} */
-
 .btn-main {
-    background: none;      /* Убираем стандартный серый/черный фон */
-    border: none;          /* Убираем рамку */
-    padding: 0;            /* Убираем внутренние отступы */
-    cursor: pointer;       /* Делаем курсор-палец */
-    display: inline-flex;  /* Центрируем содержимое */
+    background: none;     
+    border: none;         
+    padding: 0;           
+    cursor: pointer;      
+    display: inline-flex; 
     align-items: center;
     justify-content: center;
-    vertical-align: middle; /* Чтобы кнопка не улетала вверх */
+    vertical-align: middle; 
 }
 
 .btn-main img {
-    width: 60px;           /* Укажите нужный вам размер иконки */
-    height: 60px;          /* Обязательно одинаковые, чтобы иконка была ровной */
+    width: 60px;           
+    height: 60px;          
     display: block;
-    object-fit: contain;   /* Чтобы картинка не растягивалась */
+    object-fit: contain;   
+}
+
+.volume-min {
+    height: 30px;
+}
+.volume-max {
+    height: 24px;
 }
 
 h3 {
