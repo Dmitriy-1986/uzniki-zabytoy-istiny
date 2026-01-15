@@ -96,6 +96,7 @@
             color: #070707;
             pointer-events: none;
         }
+
         .content section {
             display: flex;
             justify-content: center;
@@ -172,7 +173,9 @@
 
                 <div class="player-card">
                     <div class="play-wrapper">
-                        <button class="btn btn-main" id="playPauseBtn" onclick="togglePlay()">▶</button>
+                        <button class="btn btn-main" id="playPauseBtn" onclick="togglePlay()">
+                            <img src="./assets/img/play-button.png" alt="Play">
+                        </button>
                     </div>
 
                     <div class="side-controls">
@@ -232,6 +235,7 @@
         const titleDisplay = document.getElementById('current-title');
         const playlistElement = document.getElementById('playlist');
         const volumeRange = document.getElementById('volumeRange');
+        const btnImg = playPauseBtn.querySelector('img');
 
         const songs = [
             { src: "./assets/music/first-album/1.Интро (2009).mp3", title: "1. Интро" },
@@ -264,8 +268,13 @@
             if (player.paused) player.play(); else player.pause();
         }
 
-        player.onplay = () => { playPauseBtn.innerText = "⏸"; };
-        player.onpause = () => { playPauseBtn.innerText = "▶"; };
+        player.onplay = () => {
+            btnImg.src = "./assets/img/pause-button.png";
+        };
+
+        player.onpause = () => {
+            btnImg.src = "./assets/img/play-button.png";
+        };
 
         player.ontimeupdate = () => {
             if (!isNaN(player.duration)) {

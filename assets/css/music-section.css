@@ -21,7 +21,7 @@
     overflow: hidden;
 }
 
-.btn-main {
+/* .btn-main {
     font-size: 80px !important;
     line-height: 1 !important;
     color: #ffffff !important;
@@ -31,6 +31,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    min-width: 40px;  
+    min-height: 40px; 
+    cursor: pointer;
+}
+
+.btn-main img {
+    display: block;
+    max-width: 100%; 
+    height: auto;
+} */
+
+.btn-main {
+    background: none;      /* Убираем стандартный серый/черный фон */
+    border: none;          /* Убираем рамку */
+    padding: 0;            /* Убираем внутренние отступы */
+    cursor: pointer;       /* Делаем курсор-палец */
+    display: inline-flex;  /* Центрируем содержимое */
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle; /* Чтобы кнопка не улетала вверх */
+}
+
+.btn-main img {
+    width: 60px;           /* Укажите нужный вам размер иконки */
+    height: 60px;          /* Обязательно одинаковые, чтобы иконка была ровной */
+    display: block;
+    object-fit: contain;   /* Чтобы картинка не растягивалась */
 }
 
 h3 {
