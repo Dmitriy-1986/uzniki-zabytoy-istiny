@@ -1,17 +1,17 @@
 .player-card {
     background: #ffffff;
     padding: 35px;
-    width: 420px;
+    width: 700px;
     max-width: 100%;
     text-align: center;
 }
 
 .play-wrapper {
-    width: 350px;
+    width: 700px;
     max-width: 100%;
     height: 200px;
     margin: 0 auto 20px auto;
-    background-image: url('../img/uzi-playlist-img.png');
+    background-image: url('../img/uzi-desktop-player.png');
     background-color: #000000;
     background-size: cover;
     background-position: center;
@@ -22,28 +22,37 @@
 }
 
 .btn-main {
-    background: none;     
-    border: none;         
-    padding: 0;           
-    cursor: pointer;      
-    display: inline-flex; 
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    vertical-align: middle; 
+    vertical-align: middle;
 }
 
 .btn-main img {
-    width: 60px;           
-    height: 60px;          
+    width: 60px;
+    height: 60px;
     display: block;
-    object-fit: contain;   
+    object-fit: contain;
 }
 
 .volume-min {
     height: 30px;
+    transition: all 0.3s ease;
 }
+
 .volume-max {
     height: 24px;
+    transition: all 0.3s ease;
+}
+
+.volume-min:hover,
+.volume-max:hover {
+    opacity: 0.6; 
+    filter: brightness(0.5);
 }
 
 h3 {
@@ -59,16 +68,16 @@ h3 {
     cursor: pointer;
     transition: all 0.3s ease;
     background-color: transparent;
-    color: #888;
     font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000000;
 }
 
 .btn:hover {
     transform: scale(1.1);
-    color: #000000;
+    color: #888;
 }
 
 .side-controls {
@@ -144,3 +153,12 @@ h3 {
     word-break: break-word;
     max-width: 60%;
 }
+#playPauseBtn {
+    display: block;
+    width: 50px;  /* Задайте размеры кнопки */
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('./assets/img/uzi-desktop-player.png'); /* Картинка для малых экранов */
+}
+

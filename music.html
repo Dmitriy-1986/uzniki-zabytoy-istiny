@@ -273,15 +273,11 @@
         }
 
         player.onplay = () => {
-            btnImg.src = "./assets/img/pause-button.png";
-            btnImg.style.width = "52px";
-            btnImg.style.height = "auto";
+            btnImg.src = "./assets/img/pause-button.png"; 
         };
 
         player.onpause = () => {
             btnImg.src = "./assets/img/play-button.png";
-             btnImg.style.width = "60px";
-            btnImg.style.height = "60px";
         };
 
         player.ontimeupdate = () => {
