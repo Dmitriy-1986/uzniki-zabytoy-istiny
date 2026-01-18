@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Редирект index.html → /
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ https://uzniki-zabytoy-istiny.pp.ua/ [R=301,L]
+
+# Кастомная 404
+ErrorDocument 404 /404.html
