@@ -242,29 +242,29 @@
         const btnImg = playPauseBtn.querySelector('img');
 
         const songs = [
-            { src: "./assets/music/first-album/1.Интро (2009).mp3", title: "1. Интро" },
-            { src: "./assets/music/first-album/2.Небо (скит).mp3", title: "2. Небо (скит)" },
-            { src: "./assets/music/first-album/3.Небо.mp3", title: "3. Небо" },
-            { src: "./assets/music/first-album/4.Александрия.mp3", title: "4. Александрия" },
-            { src: "./assets/music/first-album/5.Без тебя.mp3", title: "5. Без тебя" },
-            { src: "./assets/music/first-album/6.Вижу тебя.mp3", title: "6. Вижу тебя" },
-            { src: "./assets/music/first-album/7.Всему свое время.mp3", title: "7. Всему свое время" },
-            { src: "./assets/music/first-album/8.Творчество.mp3", title: "8. Творчество" },
-            { src: "./assets/music/first-album/9.Депрессия (дождь).mp3", title: "9. Депрессия (дождь)" },
-            { src: "./assets/music/first-album/10.Депрессия (дождь) (RMX).mp3", title: "10. Депрессия (дождь) (RMX)" },
-            { src: "./assets/music/first-album/11.Душа.mp3", title: "11. Душа" },
-            { src: "./assets/music/first-album/12.Единственный друг.mp3", title: "12. Единственный друг" },
-            { src: "./assets/music/first-album/13.Жестяк (не законченая версия).mp3", title: "13. Жестяк (не законченая версия)" },
-            { src: "./assets/music/first-album/14.Стихотворение 1[1].mp3", title: "14. Стихотворение" },
-            { src: "./assets/music/first-album/15.Жизнь бандита (RMX).mp3", title: "15. Жизнь бандита (RMX)" },
-            { src: "./assets/music/first-album/16.Моё оружие.mp3", title: "16. Моё оружие" },
-            { src: "./assets/music/first-album/17.Стихотворение 2.mp3", title: "17. Стихотворение" },
-            { src: "./assets/music/first-album/18.Одиночество.mp3", title: "18. Одиночество" },
-            { src: "./assets/music/first-album/19.Посмотри на себя.mp3", title: "19. Посмотри на себя" },
-            { src: "./assets/music/first-album/20.Умереть однажды.mp3", title: "20. Умереть однажды" },
-            { src: "./assets/music/first-album/21.Я устал.mp3", title: "21. Я устал" },
-            { src: "./assets/music/first-album/22.Узники забытой истины.mp3", title: "22. Узники забытой истины" },
-            { src: "./assets/music/first-album/23.Аутро.mp3", title: "23. Аутро" }
+            { src: "./assets/music/first-album/01-intro-2009.mp3", title: "1. Интро" },
+            { src: "./assets/music/first-album/02-nebo-skit.mp3", title: "2. Небо (скит)" },
+            { src: "./assets/music/first-album/03-nebo.mp3", title: "3. Небо" },
+            { src: "./assets/music/first-album/04-alexandria.mp3", title: "4. Александрия" },
+            { src: "./assets/music/first-album/05-bez-tebya.mp3", title: "5. Без тебя" },
+            { src: "./assets/music/first-album/06-vizhu-tebya.mp3", title: "6. Вижу тебя" },
+            { src: "./assets/music/first-album/07-vsemu-svoe-vremya.mp3", title: "7. Всему свое время" },
+            { src: "./assets/music/first-album/08-tvorchestvo.mp3", title: "8. Творчество" },
+            { src: "./assets/music/first-album/09-depressiya-dozhd.mp3", title: "9. Депрессия (дождь)" },
+            { src: "./assets/music/first-album/10-depressiya-dozhd-rmx.mp3", title: "10. Депрессия (дождь) (RMX)" },
+            { src: "./assets/music/first-album/11-dusha.mp3", title: "11. Душа" },
+            { src: "./assets/music/first-album/12-edinstvenniy-drug.mp3", title: "12. Единственный друг" },
+            { src: "./assets/music/first-album/13-zhestyak-unf.mp3", title: "13. Жестяк (не законченая версия)" },
+            { src: "./assets/music/first-album/14-stih-1.mp3", title: "14. Стихотворение" },
+            { src: "./assets/music/first-album/15-zhizn-bandita-rmx.mp3", title: "15. Жизнь бандита (RMX)" },
+            { src: "./assets/music/first-album/16-moe-oruzhie.mp3", title: "16. Моё оружие" },
+            { src: "./assets/music/first-album/17-stih-2.mp3", title: "17. Стихотворение" },
+            { src: "./assets/music/first-album/18-odinochestvo.mp3", title: "18. Одиночество" },
+            { src: "./assets/music/first-album/19-posmotri-na-sebya.mp3", title: "19. Посмотри на себя" },
+            { src: "./assets/music/first-album/20-umeret-odnazhdy.mp3", title: "20. Умереть однажды" },
+            { src: "./assets/music/first-album/21-ya-ustal.mp3", title: "21. Я устал" },
+            { src: "./assets/music/first-album/22-uzniki-zabytoy-istiny.mp3", title: "22. Узники забытой истины" },
+            { src: "./assets/music/first-album/23-autro.mp3", title: "23. Аутро" }
         ];
         let currentIndex = 0;
 
@@ -273,7 +273,7 @@
         }
 
         player.onplay = () => {
-            btnImg.src = "./assets/img/pause-button.png"; 
+            btnImg.src = "./assets/img/pause-button.png";
         };
 
         player.onpause = () => {
@@ -326,6 +326,17 @@
         source.src = songs[0].src;
         titleDisplay.innerText = songs[0].title;
         renderPlaylist();
+    </script>
+
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw-music.js')
+                    .then(reg => console.log('Кеширование музыки активировано'))
+                    .catch(err => console.log('Ошибка SW:', err));
+            });
+        }
     </script>
 </body>
 

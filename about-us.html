@@ -287,6 +287,17 @@
             });
         });
     </script>
+
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw-about_us.js')
+                    .then(reg => console.log('Service Worker зарегистрирован!'))
+                    .catch(err => console.log('Ошибка регистрации SW:', err));
+            });
+        }
+    </script>
 </body>
 
 </html>
