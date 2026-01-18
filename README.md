@@ -1,5 +1,8 @@
-# [🎵 U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/)
-![Логотип U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/uzi-600-315.png)
+<div align="center">
+    # [🎵 U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/)
+    ![Логотип U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/uzi-600-315.png)
+    Слова, що ведуть крізь темряву до світла.
+</div>
 
 ## Про нас
 Чесний реп для тих, хто шукає істину.  
