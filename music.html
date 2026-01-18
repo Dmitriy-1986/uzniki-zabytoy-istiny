@@ -47,6 +47,13 @@
 
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
+    <link rel="canonical" href="https://uzniki-zabytoy-istiny.pp.ua/music.html">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
     <style>
         .content h2 {
             font-size: 2.2rem;
@@ -131,15 +138,47 @@
         }
     </style>
 
-    <link rel="canonical" href="https://uzniki-zabytoy-istiny.pp.ua/music.html">
+    <!-- Loading -->
+    <style>
+        .wrapper-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: #ffffff;
+            display: grid;
+            place-items: center;
+            transition: opacity 0.25s, visibility 1s;
+            height: 100%;
+            width: 100%;
+        }
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+        .fade {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader img {
+            width: 30px;
+        }
+
+        #titleHome {
+            color: var(--color-indigo);
+        }
+
+        iframe {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="wrapper-loader">
+        <div class="loader">
+            <img src="./preview.gif" alt="Loading">
+        </div>
+    </div>
+
     <div class="wrapper">
         <header>
             <!-- Mobile Menu -->
@@ -352,6 +391,18 @@
         source.src = songs[0].src;
         titleDisplay.innerText = songs[0].title;
         renderPlaylist();
+    </script>
+
+    <!-- Loading -->
+    <script>
+        window.addEventListener('load', () => {
+            const wrapperLoader = document.querySelector('.wrapper-loader');
+            wrapperLoader.classList.add('fade');
+        });
+
+        if (window.location.pathname.endsWith('/index.html')) {
+            window.location.replace('/');
+        }
     </script>
 </body>
 

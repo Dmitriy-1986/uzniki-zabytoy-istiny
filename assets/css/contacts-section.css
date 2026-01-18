@@ -18,14 +18,14 @@
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-/* Сетка контактов */
+
 .contact-list {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки для ПК */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
     max-width: 700px;
     margin: 0 auto;
-    text-align: left; /* Изменено с justify на left для удобства чтения */
+    text-align: left; 
 }
 
 .contact-list p {
@@ -34,7 +34,7 @@
 }
 
 .contact-list a {
-    display: inline-block; /* Изменено на inline-block, чтобы ссылка не была на всю ширину */
+    display: inline-block; 
     color: #464646;
     text-decoration: none;
     transition: opacity 0.3s ease;
@@ -42,42 +42,6 @@
 
 .contact-list a:hover {
     opacity: 0.7;
-}
-
-/* --- АДАПТАЦИЯ --- */
-
-/* Планшеты (до 768px) */
-@media (max-width: 768px) {
-    .contacts h2 {
-        font-size: 1.8rem;
-        letter-spacing: 2px;
-    }
-    
-    .contact-list {
-        gap: 20px;
-    }
-}
-
-/* Мобильные телефоны (до 600px) */
-@media (max-width: 600px) {
-    .content {
-        padding: 40px 15px; /* Уменьшаем отступы секции */
-    }
-
-    .contacts h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-    }
-
-    .contact-list {
-        grid-template-columns: 1fr; /* Переключаемся в одну колонку */
-        text-align: center;         /* Центрируем контакты для мобильных */
-        gap: 25px;
-    }
-
-    .contact-list p {
-        font-size: 16px; /* Чуть меньше шрифт */
-    }
 }
 
 .socials {
@@ -116,116 +80,38 @@
     transform: translateY(-5px);
     opacity: 0.8;
 }
-/* Основной контейнер */
-.contact-container {
-    width: 90%;            /* Для гибкости на малых экранах */
-    max-width: 1000px;     /* Максимальная ширина на десктопе */
-    margin: 40px auto;
-    padding: 40px;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    box-sizing: border-box; /* Важно: чтобы padding не раздувал ширину */
-}
 
-.contact-container h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
-    color: #222;
-    text-align: center;
-}
-
-/* Сетка: Имя и Телефон в один ряд */
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-
-.form-row .form-group {
-    flex: 1;
-}
-
-/* Общие стили для групп полей */
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #444;
-}
-
-/* Поля ввода и текстовая область */
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #eee;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #4CAF50;
-    outline: none;
-    background-color: #f9fff9;
-}
-
-/* Кнопка */
-.submit-btn {
-    padding: 16px 40px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    min-width: 200px;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-}
-
-/* --- АДАПТИВНОСТЬ --- */
-
-/* Планшеты */
+/* --- АДАПТАЦИЯ --- */
+/* Планшеты (до 768px) */
 @media (max-width: 768px) {
-    .contact-container {
-        padding: 30px;
+    .contacts h2 {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
     }
-    .contact-container h2 {
-        font-size: 24px;
+    
+    .contact-list {
+        gap: 20px;
     }
 }
 
-/* Мобильные телефоны */
+/* Мобильные телефоны (до 600px) */
 @media (max-width: 600px) {
-    .form-row {
-        flex-direction: column; /* Имя и телефон друг под другом */
-        gap: 0;
+    .content {
+        padding: 40px 15px; 
     }
 
-    .contact-container {
-        padding: 20px;
-        width: 95%;
+    .contacts h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
 
-    .submit-btn {
-        width: 100%; /* Кнопка на весь экран */
+    .contact-list {
+        grid-template-columns: 1fr;
+        text-align: center;         
+        gap: 25px;
     }
 
-    .form-group input, 
-    .form-group textarea {
-        font-size: 14px;
-        padding: 12px;
+    .contact-list p {
+        font-size: 16px; 
     }
 }

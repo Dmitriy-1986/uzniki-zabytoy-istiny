@@ -131,37 +131,6 @@
                     </a>
                 </div>
             </section>
-            <!--  <section>
-                <div class="contact-container">
-                    <h2>Зв'язатися з нами</h2>
-                    <form action="#" method="POST" class="contact-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Ім'я</label>
-                                <input type="text" id="name" name="name" placeholder="Ваше iм'я" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Телефон</label>
-                                <input type="tel" id="phone" name="phone" placeholder="+3 (___) ___-__-__" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Електронна пошта</label>
-                            <input type="email" id="email" name="email" placeholder="example@mail.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">Повідомлення</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Введіть повідомлення..."
-                                required></textarea>
-                        </div>
-
-                        <button type="submit" class="submit-btn">Надіслати</button>
-                    </form>
-                </div>
-            </section> -->
         </main>
 
         <footer>
@@ -180,6 +149,17 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/mobile-menu.js"></script>
 
+    <!-- Loading -->
+    <script>
+        window.addEventListener('load', () => {
+            const wrapperLoader = document.querySelector('.wrapper-loader');
+            wrapperLoader.classList.add('fade');
+        });
+
+        if (window.location.pathname.endsWith('/index.html')) {
+            window.location.replace('/');
+        }
+    </script>
 </body>
 
 </html>
