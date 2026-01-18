@@ -31,9 +31,9 @@
 ---
 
 ### Навігація
-* [Головна](./index.html)
-* [Про нас](./about-us.html)
-* [Музика](./music.html)
-* [Контакти](./contacts.html)
+* [Головна](https://uzniki-zabytoy-istiny.pp.ua/index.html)
+* [Про нас](https://uzniki-zabytoy-istiny.pp.ua/about-us.html)
+* [Музика](https://uzniki-zabytoy-istiny.pp.ua/music.html)
+* [Контакти](https://uzniki-zabytoy-istiny.pp.ua/contacts.html)
 
 &copy; 2026 **U.Z.I.**
