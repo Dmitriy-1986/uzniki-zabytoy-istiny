@@ -122,6 +122,18 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/mobile-menu.js"></script>
 
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                // Регистрация Service Worker для всего сайта
+                navigator.serviceWorker.register('./sw.js')
+                    .then(reg => console.log('Service Worker U.Z.I. готов'))
+                    .catch(err => console.error('Ошибка:', err));
+            });
+        }
+    </script>
+
 </body>
 
 </html>

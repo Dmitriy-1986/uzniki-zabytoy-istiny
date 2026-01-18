@@ -327,17 +327,6 @@
         titleDisplay.innerText = songs[0].title;
         renderPlaylist();
     </script>
-
-    <!-- Service Worker -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw-music.js')
-                    .then(reg => console.log('Кеширование музыки активировано'))
-                    .catch(err => console.log('Ошибка SW:', err));
-            });
-        }
-    </script>
 </body>
 
 </html>
