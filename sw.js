@@ -1,6 +1,5 @@
 const CACHE_NAME = 'uzi-universal-cache-v1';
 
-// 1. Что кешируем сразу (каркас сайта)
 const PRECACHE = [
   './',
   './index.html',
@@ -32,7 +31,6 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Игнорируем запросы не с нашего домена (например, расширения или аналитику)
   if (!event.request.url.startsWith(self.location.origin)) return;
 
   event.respondWith(
@@ -42,12 +40,9 @@ self.addEventListener('fetch', (event) => {
       }
 
       return fetch(event.request).then((response) => {
-        // Проверка на музыку (MP3)
         const isMusic = event.request.url.match(/\.mp3$/);
 
-        // Если это музыка и пришел статус 206 (Partial Content)
         if (isMusic && response.status === 206) {
-          // Перезапрашиваем файл целиком (статус 200), чтобы сохранить в кеш
           return fetch(event.request.url).then(fullResponse => {
             const responseToCache = fullResponse.clone();
             caches.open(CACHE_NAME).then((cache) => {
@@ -57,7 +52,6 @@ self.addEventListener('fetch', (event) => {
           });
         }
 
-        // Для обычных файлов (200 OK) сохраняем как обычно
         if (response.status === 200 && (isMusic || event.request.url.match(/\.(?:jpg|png|jpeg)$/))) {
           const responseToCache = response.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -67,8 +61,6 @@ self.addEventListener('fetch', (event) => {
 
         return response;
       }).catch(() => {
-        // Это предотвратит ошибки в консоли, если интернет пропал, 
-        // а файла еще нет в кеше
         console.log('Файл пока недоступен оффлайн');
       });
     })
