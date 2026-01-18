@@ -9,7 +9,7 @@
 Чесний реп для тих, хто шукає істину.  
 Слова, що ведуть крізь темряву до світла. Музика, що говорить серцем.
 
-[Більше інформації](https://uzniki-zabytoy-istiny.pp.ua/about-us.html)
+[Більше інформації](https://uzniki-zabytoy-istiny.pp.ua/about-us.html)  
 [Код сторінки](about-us.html)
 
 ---
@@ -17,7 +17,7 @@
 ## Музика
 Наші композиції поєднують глибокі тексти й ритми, що не залишають байдужим. Обирайте трек, який відгукнеться вашому серцю, і занурюйтесь у світ істини та самопізнання.
 
-[Більше інформації](https://uzniki-zabytoy-istiny.pp.ua/music.html)
+[Більше інформації](https://uzniki-zabytoy-istiny.pp.ua/music.html)  
 [Код сторінки](music.html)
 
 ---
@@ -25,7 +25,7 @@
 ## Контакти
 Зв’яжіться з нами, щоб відчути музику ближче.
 
-[Більше інформації](https://uzniki-zabytoy-istiny.pp.ua/contacts.html)
+[Більше інформації](https://uzniki-zabytoy-istiny.pp.ua/contacts.html)  
 [Код сторінки](contacts.html)
 
 ---
