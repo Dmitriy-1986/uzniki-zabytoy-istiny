@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
     <meta charset="UTF-8">
@@ -49,9 +49,97 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Контакти U.Z.I.",
+            "description": "Зв'яжіться з адміністрацією проекту Узники забытой истины (U.Z.I.) через електронну пошту або телефон.",
+            "url": "https://uzniki-zabytoy-istiny.pp.ua/contacts.html",
+            "mainEntity": {
+                "@type": "Organization",
+                "name": "U.Z.I.",
+                "url": "https://uzniki-zabytoy-istiny.pp.ua/",
+                "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "email": "yuraronin3@ukr.net",
+                    "telephone": "+380-93-285-4448",
+                    "contactType": "administrator",
+                    "availableLanguage": ["Ukrainian", "Russian"]
+                },
+                {
+                    "@type": "ContactPoint",
+                    "email": "kostyamerkotan@ukr.net",
+                    "telephone": "+380-68-460-2048",
+                    "contactType": "administrator",
+                    "availableLanguage": ["Ukrainian", "Russian"]
+                }
+                ]
+            },
+            "breadcrumb": {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Головна",
+                    "item": "https://uzniki-zabytoy-istiny.pp.ua/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Контакти",
+                    "item": "https://uzniki-zabytoy-istiny.pp.ua/contacts.html"
+                }
+                ]
+            }
+        }
+    </script>
+
+    <!-- Loading -->
+    <style>
+        .wrapper-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background-color: #ffffff;
+            display: grid;
+            place-items: center;
+            transition: opacity 0.25s, visibility 1s;
+            height: 100%;
+            width: 100%;
+        }
+
+        .fade {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader img {
+            width: 30px;
+        }
+
+        #titleHome {
+            color: var(--color-indigo);
+        }
+
+        iframe {
+            width: 100%;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Preloader -->
+    <div class="wrapper-loader">
+        <div class="loader">
+            <img src="./preview.gif" alt="Loading">
+        </div>
+    </div>
+
     <div class="wrapper">
         <header>
             <!-- Mobile Menu -->
