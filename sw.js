@@ -31,22 +31,42 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// 2. Универсальный перехватчик
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) return cachedResponse;
+    // Игнорируем запросы не с нашего домена (например, расширения или аналитику)
+    if (!event.request.url.startsWith(self.location.origin)) return;
 
-      return fetch(event.request).then((response) => {
-        // Если это музыка или фото из слайдера — кешируем после первого открытия
-        if (event.request.url.match(/\.(?:mp3|jpg|jpeg|png|JPG)$/)) {
-          const responseToCache = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseToCache);
-          });
-        }
-        return response;
-      });
-    })
-  );
+    event.respondWith(
+        caches.match(event.request).then((cachedResponse) => {
+            if (cachedResponse) {
+                return cachedResponse;
+            }
+
+            return fetch(event.request).then((response) => {
+                // Проверка на музыку (MP3)
+                const isMusic = event.request.url.match(/\.mp3$/);
+
+                // Если это музыка и пришел статус 206 (Partial Content)
+                if (isMusic && response.status === 206) {
+                    // Перезапрашиваем файл целиком (статус 200), чтобы сохранить в кеш
+                    return fetch(event.request.url).then(fullResponse => {
+                        const responseToCache = fullResponse.clone();
+                        caches.open(CACHE_NAME).then((cache) => {
+                            cache.put(event.request, responseToCache);
+                        });
+                        return fullResponse;
+                    });
+                }
+
+                // Для обычных файлов (200 OK) сохраняем как обычно
+                if (response.status === 200 && (isMusic || event.request.url.match(/\.(?:jpg|png|jpeg)$/))) {
+                    const responseToCache = response.clone();
+                    caches.open(CACHE_NAME).then((cache) => {
+                        cache.put(event.request, responseToCache);
+                    });
+                }
+
+                return response;
+            });
+        })
+    );
 });
