@@ -1,5 +1,5 @@
-# [🎵 U.Z.I. — Офіційний сайт](https://uzniki-zabytoy-istiny.pp.ua/)
-![Логотип U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua//android-chrome-512x512.png)
+# [🎵 U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/)
+![Логотип U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/uzi-600-315.png)
 
 ## Про нас
 Чесний реп для тих, хто шукає істину.  
