@@ -1,6 +1,6 @@
 # [🎵 U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/)
 
-![Логотип U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/uzi-600-315.png)
+![Логотип U.Z.I.](https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-600-315.png)
 
 ## Слова, що ведуть крізь темряву до світла.
 
