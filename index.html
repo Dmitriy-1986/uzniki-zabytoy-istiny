@@ -19,21 +19,29 @@
     <meta property="og:title" content="U.Z.I.">
     <meta property="og:description" content="Головна сторiнка сайту реп гурту U.Z.I.">
 
-    <meta property="og:image" content="./android-chrome-512x512.png">
+    <meta property="og:image" content="https://uzniki-zabytoy-istiny.pp.ua/android-chrome-512x512.png">
     <meta property="og:image:width" content="512">
     <meta property="og:image:height" content="512">
 
-    <meta property="og:image" content="./uzi-600-315.png">
+    <meta property="og:image" content="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-600-315.png">
     <meta property="og:image:width" content="600">
     <meta property="og:image:height" content="315">
 
-    <meta property="og:image" content="./uzi-800-420.png">
+    <meta property="og:image" content="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-800-420.png">
     <meta property="og:image:width" content="800">
     <meta property="og:image:height" content="420">
 
-    <meta property="og:image" content="./uzi-1200-630.png">
+    <meta property="og:image" content="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-1200-630.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+
+    <meta property="og:image" content="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-32x32.png">
+    <meta property="og:image:width" content="32">
+    <meta property="og:image:height" content="32">
+
+    <meta property="og:image" content="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-16x16.png">
+    <meta property="og:image:width" content="16">
+    <meta property="og:image:height" content="16">
 
     <meta property="og:url" content="https://uzniki-zabytoy-istiny.pp.ua/">
 
@@ -45,9 +53,12 @@
 
     <link rel="canonical" href="https://uzniki-zabytoy-istiny.pp.ua">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="1200x630" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-1200x630.png">
+    <link rel="icon" type="image/png" sizes="600x315" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-600-315.png">
+    <link rel="icon" type="image/png" sizes="800x420" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-800-420.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Schema.org -->
@@ -67,6 +78,7 @@
         }
     </script>
 
+    <!-- Preloader -->
     <style>
         .wrapper-loader {
             position: fixed;
@@ -88,14 +100,6 @@
         .loader img {
             width: 30px;
         }
-
-        #titleHome {
-            color: var(--color-indigo);
-        }
-
-        iframe {
-            width: 100%;
-        }
     </style>
 </head>
 
@@ -103,7 +107,7 @@
     <!-- Preloader -->
     <div class="wrapper-loader">
         <div class="loader">
-            <img src="./preview.gif" alt="Loading">
+            <img src="./assets/img/preview.gif" alt="Loading">
         </div>
     </div>
 
@@ -144,7 +148,7 @@
 
                 <div class="hero-bg"></div>
                 <div class="hero-logo">
-                    <img src="./assets/img/uzi-logo-removebg.png" alt="logo">
+                    <img src="./assets/img/uzi-logo-removebg.png" alt="Логотип U.Z.I.">
                 </div>
                 <div class="hero-overlay"></div>
 
@@ -205,8 +209,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                // Регистрация Service Worker для всего сайта
-                navigator.serviceWorker.register('./sw.js')
+                navigator.serviceWorker.register('/sw.js')
                     .then(reg => console.log('Service Worker U.Z.I. готов'))
                     .catch(err => console.error('Ошибка:', err));
             });
