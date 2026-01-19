@@ -218,10 +218,10 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,   
-            once: true,      
-            mirror: true,     
-            offset: 120,     
+            duration: 1000,
+            once: false,
+            mirror: true,
+            offset: 120,
         });
     </script>
 
@@ -241,6 +241,10 @@
         window.addEventListener('load', () => {
             const wrapperLoader = document.querySelector('.wrapper-loader');
             wrapperLoader.classList.add('fade');
+            
+            setTimeout(() => {
+                AOS.refresh();
+            }, 600);
         });
 
         if (window.location.pathname.endsWith('/index.html')) {
