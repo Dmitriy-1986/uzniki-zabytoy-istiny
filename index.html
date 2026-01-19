@@ -167,7 +167,7 @@
 
         <main class="content">
             <section>
-                <h2 data-aos="fade-right">Про нас</h2>
+                <h2 data-aos="fade-right" data-aos-mirror="true">Про нас</h2>
                 <p>
                     Чесний реп для тих, хто шукає істину.
                     Слова, що ведуть крізь темряву до світла. Музика, що говорить серцем.
@@ -178,7 +178,7 @@
             </section>
 
             <section>
-                <h2 data-aos="fade-right">Музика</h2>
+                <h2 data-aos="fade-right" data-aos-mirror="true">Музика</h2>
                 <p>
                     Наші композиції поєднують глибокі тексти й ритми, що не залишають байдужим. Обирайте трек, який
                     відгукнеться вашому серцю, і занурюйтесь у світ істини та самопізнання.
@@ -189,7 +189,7 @@
             </section>
 
             <section>
-                <h2 data-aos="fade-right">Контакти</h2>
+                <h2 data-aos="fade-right" data-aos-mirror="true">Контакти</h2>
                 <p>Зв’яжіться з нами, щоб відчути музику ближче.</p>
 
                 <a href="contacts.html" class="btn btn-outline">
@@ -221,7 +221,8 @@
             duration: 1000,
             once: false,
             mirror: true,
-            offset: 120,
+            offset: 100,
+            anchorPlacement: 'top-bottom',
         });
     </script>
 
@@ -241,7 +242,7 @@
         window.addEventListener('load', () => {
             const wrapperLoader = document.querySelector('.wrapper-loader');
             wrapperLoader.classList.add('fade');
-            
+
             setTimeout(() => {
                 AOS.refresh();
             }, 600);
