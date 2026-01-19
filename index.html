@@ -53,16 +53,24 @@
 
     <link rel="canonical" href="https://uzniki-zabytoy-istiny.pp.ua">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="1200x630" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-1200x630.png">
-    <link rel="icon" type="image/png" sizes="600x315" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-600-315.png">
-    <link rel="icon" type="image/png" sizes="800x420" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-800-420.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="1200x630"
+        href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-1200x630.png">
+    <link rel="icon" type="image/png" sizes="600x315"
+        href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-600-315.png">
+    <link rel="icon" type="image/png" sizes="800x420"
+        href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/uzi-800-420.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://uzniki-zabytoy-istiny.pp.ua/assets/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- Animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Schema.org -->
     <script type="application/ld+json">
@@ -161,7 +169,7 @@
 
         <main class="content">
             <section>
-                <h2 class="animate__animated animate__backInLeft animate__delay-1s animate__slow">Про нас</h2>
+                <h2 data-aos="fade-right">Про нас</h2>
                 <p>
                     Чесний реп для тих, хто шукає істину.
                     Слова, що ведуть крізь темряву до світла. Музика, що говорить серцем.
@@ -172,7 +180,7 @@
             </section>
 
             <section>
-                <h2 class="animate__animated animate__backInLeft animate__delay-1s animate__slow">Музика</h2>
+                <h2 data-aos="fade-right">Музика</h2>
                 <p>
                     Наші композиції поєднують глибокі тексти й ритми, що не залишають байдужим. Обирайте трек, який
                     відгукнеться вашому серцю, і занурюйтесь у світ істини та самопізнання.
@@ -183,7 +191,7 @@
             </section>
 
             <section>
-                <h2 class="animate__animated animate__backInLeft animate__delay-1s animate__slow">Контакти</h2>
+                <h2 data-aos="back-in-left">Контакти</h2>
                 <p>Зв’яжіться з нами, щоб відчути музику ближче.</p>
 
                 <a href="contacts.html" class="btn btn-outline">
@@ -207,6 +215,16 @@
 
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/mobile-menu.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,   // Длительность анимации (1 сек)
+            once: false,      // Сделайте false, чтобы анимация повторялась
+            mirror: true,     // Элементы будут анимироваться и при скролле вверх
+            offset: 120,      // Анимация начнется чуть раньше/позже при достижении края
+        });
+    </script>
 
     <!-- Service Worker -->
     <script>
