@@ -2,6 +2,7 @@ const CACHE_NAME = 'uzi-universal-cache-v1';
 
 const PRECACHE = [
   './',
+  './404.html',
   './index.html',
   './about-us.html',
   './music.html',
@@ -11,6 +12,9 @@ const PRECACHE = [
   './assets/css/content-section.css',
   './assets/css/music-section.css',
   './assets/css/aboutus-section.css',
+  './assets/css/contacts-section.css',
+  './assets/js/mobile-menu.js',
+  './assets/js/script.js',
   './assets/img/uzi-logo-removebg.png',
   './assets/img/icon-burger-menu.png'
 ];
