@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/mobile-menu.css">
     <link rel="stylesheet" href="./assets/css/aboutus-section.css">
+    <link rel="stylesheet" href="./assets/css/slider-container.css">
 
     <meta name="description" content="U.Z.I. — український музичний гурт. Історія, творчість, повернення та новий етап розвитку.">
 
@@ -97,78 +98,6 @@
             }
         }
     </script>
-
-    <style>
-        /* Контейнер слайдера */
-        .main-slider {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .splide__slide {
-            position: relative;
-            overflow: hidden;
-
-        }
-
-        .splide__slide img {
-            width: 100%;
-            display: block;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            object-position: top center;
-        }
-
-        .splide__arrow {
-            background: rgba(255, 255, 255, 0.8) !important;
-            opacity: 1 !important;
-            transition: all 0.3s ease;
-        }
-
-        .splide__arrow:hover {
-            background: #fff !important;
-            transform: scale(1.1);
-        }
-
-        .slide-content {
-            position: absolute;
-            bottom: 40px;
-            left: 40px;
-            color: white;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        @media (max-width: 768px) {
-            .splide__slide img {
-                aspect-ratio: 4 / 5;
-            }
-        }
-
-        .slider-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .splide__slide {
-            background-color: #eee;
-        }
-
-        .splide__slide img {
-            width: 100%;
-            display: block;
-            aspect-ratio: 16 / 9;
-            object-fit: cover;
-            object-position: top center;
-        }
-
-        .splide {
-            width: 100%;
-        }
-    </style>
 
     <!-- Preloader -->
     <style>
